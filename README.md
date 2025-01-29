@@ -5,6 +5,18 @@ Top Silly Moments in Chess History
 ## Project Overview:
  **"Top Silly Moments in Chess History"** project is a unique way to showcase a combination of technical as well as creative skills at same time. By building this project, I can show skill in several important areas in full-stack web development.
 
+## Getting Started
+### Prerequisites
+- Node.js (v16 or higher)
+- MongoDB
+- npm or yarn
+
+### Installation
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Configure environment variables
+4. Start development server: `npm run dev`
+
 ### FRONT-END
 
 1. **Component-Based Architecture:** I will learn how to design components to display user profiles, and individual moments. This helps to improve my understanding of front-end component.    
