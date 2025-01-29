@@ -3,7 +3,7 @@
 Top Silly Moments in Chess History
 =
 ### Project Overview:
- **"Top Silly Moments in Chess History"** project is a unique way to showcase a combination of technical as well as creative skills at  same time. By buildinig this project, I can show skill in several important areas in full-stack web development.
+ **"Top Silly Moments in Chess History"** project is a unique way to showcase a combination of technical as well as creative skills at  same time. By building this project, I can show skill in several important areas in full-stack web development.
 
 ## FRONT-END
 
@@ -14,7 +14,7 @@ Top Silly Moments in Chess History
 ## BACKEND
 
 1.  **API Design:** I will create RESTful APIs for handling operations like Create, Read, Update, Delete for the chess moments, which can help in API design, request handling, and error management..
-3. **Database Interaction (MongoDB & Mongoose):** I will design Mongoose schemas for storing user data , videos and moments. This will help my understanding of database schema design and how to interact with databases using API.
+2. **Database Interaction (MongoDB & Mongoose):** I will design Mongoose schemas for storing user data , videos and moments. This will help my understanding of database schema design and how to interact with databases using API.
 
 ### Deployment:
 
