@@ -7,6 +7,6 @@ app.get("/", (req, res) => {
     res.send("My name is Avinash. I am from squad-84")
 })
 
-app.listen(6900, () => {
+app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
 })
