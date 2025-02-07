@@ -1,39 +1,73 @@
 # S84_Top-Silly-Moments-in-Chess-History
 
-Top Silly Moments in Chess History
-=
-## Project Overview:
- **"Top Silly Moments in Chess History"** project is a unique way to showcase a combination of technical as well as creative skills at same time. By building this project, I can show skill in several important areas in full-stack web development.
+# 🌟 Top Silly Moments in Chess History
 
-## Getting Started
-### Prerequisites
-- Node.js (v16 or higher)
-- MongoDB
-- npm or yarn
+## 🎮 Project Overview:
+**"Top Silly Moments in Chess History"** is a unique project that blends technical and creative skills. By building this, I will enhance my full-stack web development abilities while showcasing fun and entertaining moments from chess history. 
 
-### Installation
-1. Clone the repository
+---
+## 🛠️ Getting Started
+### Prerequisites 
+- 💻 Node.js (v16 or higher)
+- 📝 MongoDB
+- 💳 npm or yarn
+
+### 🔄 Installation
+1. Clone the repository: `git clone <repo_url>`
 2. Install dependencies: `npm install`
 3. Configure environment variables
 4. Start development server: `npm run dev`
 
-### FRONT-END
+---
+## 🌐 FRONT-END
+### Key Features:
+1. **🛠️ Component-Based Architecture:** Designing reusable components to display user profiles and individual moments, improving my front-end development skills.    
+2. **👀 UX Design:** Creating an interactive UI where users can browse moments, rate them, submit their own videos, and leave comments.
+3. **🔗 Routing & Navigation:** Using JavaScript and React to handle navigation and different views (e.g., login, home, user-specific lists), sharpening my React skills.
 
-1. **Component-Based Architecture:** I will learn how to design components to display user profiles, and individual moments. This helps to improve my understanding of front-end component.    
-2. **UX Design:** I will focus on building an interactive UI where users can easily navigate through many videos and moments, rate them, and submit their own moments/videos or add comments to that moments / videos.
-3.  **Routing & Navigation:** Using Js and react to navigate and design different views (e.g., login page, home page, user-specific list) will sharpen my skills.
+---
+## 💻 BACKEND
+### Key Features:
+1. **🎮 API Design:** Developing RESTful APIs to handle Create, Read, Update, and Delete (CRUD) operations for chess moments.
+2. **📚 Database Interaction (MongoDB & Mongoose):** Designing Mongoose schemas to store user data, videos, and moments securely.
 
-### BACKEND
+---
+## 🌐 Deployment
+1. Deploying the frontend and backend on **Netlify** and **Render**, gaining real-world deployment experience.
+2. Using **GitHub** for version control, improving collaboration skills through branching, pull requests, and merging.
 
-1.  **API Design:** I will create RESTful APIs for handling operations like Create, Read, Update, Delete for the chess moments, which can help in API design, request handling, and error management..
-2. **Database Interaction (MongoDB & Mongoose):** I will design Mongoose schemas for storing user data , videos and moments. This will help my understanding of database schema design and how to interact with databases using API.
+---
+## 🔒 Data Security
+1. **🔐 Password Security:** Implementing secure password hashing to protect user credentials.
 
-### Deployment:
+---
+## 🎯 Milestones
+### 🎯 Milestone 1: Project Setup & Environment Configuration 
+- ✅ Set up the repository and install dependencies
+- ✅ Configure environment variables
+- ✅ Initialize Git version control 
 
-1. I will deploy both the frontend and backend platforms like Netlify and Render, gaining experience with deployment and configuration.
-2. By using GitHub to manage version control, I will gain a deeper understanding of collaborative development practices, including branching, pull requests, and merging.
+### 🛠️ Milestone 2: Frontend Development
+- ✅ Implement basic UI layout and navigation
+- ✅ Develop reusable React components for displaying moments
+- ✅ Add user interactions (rating, commenting, submissions)
 
-### Data Security:
-1. **Password security:** I will implement secure password handling by hashing passwords so that user sensitive information is stored in a safe place.
-  
-This project will help me gain practical experience with modern web development tools while simultaneously providing a fun and engaging platform for users to enjoy and interact with chess history and its silly moments. By completing this project, I will be able to demonstrate my skills in full-stack development, API design, database management, and user authentication.
+### 💻 Milestone 3: Backend Development
+- ✅ Create RESTful APIs for CRUD operations
+- ✅ Implement authentication & user management
+- ✅ Integrate MongoDB database with Mongoose
+
+### 🌍 Milestone 4: Deployment & Hosting
+- ✅ Deploy the backend on **Render**
+- ✅ Deploy the frontend on **Netlify**
+- ✅ Ensure environment variables and security settings are properly configured
+
+### 🔐 Milestone 5: Security Enhancements
+- ✅ Implement JWT authentication
+- ✅ Hash passwords before saving in the database
+- ✅ Secure API routes with proper access control
+
+### 🌟 Milestone 6: Learning Goals 🎯
+By the end of this milestone, I will:
+- 🔒 Understand how to **encrypt passwords** before saving them securely.
+- 💻 Learn how to **store complete user data securely** in the database.
