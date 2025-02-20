@@ -8,7 +8,7 @@ const Port = process.env.PORT || 6969;
 const db_url = process.env.DB_URL 
 
 app.get("/", (req, res) => {
-    res.send("My name is Avinash. I am from squad-84")
+    res.send("<h2> My name is Avinash. I am from squad-84 </h2>")
 })
 
 app.get('/ping', (req, res) => {
