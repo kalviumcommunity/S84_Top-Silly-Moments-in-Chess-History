@@ -1,6 +1,7 @@
 const express = require("express");
 const { connect } = require("mongoose");
 const connectToDb = require("./database/db");
+const Moment = require('./controllers/momentsControllesrs');
 const app = express();
 require('dotenv').config();
 
@@ -15,11 +16,15 @@ app.get('/ping', (req, res) => {
     res.send("<h1> I am currently inside ping destination! </h1>")
 })
 
+app.use('/', Moment);
+
+
+
 app.listen(Port, async() => {
     try{
         await connectToDb(db_url);
         console.log(`Server is running on port http://localhost:${Port}`);
-        console.log(`Successfull connected to database woth url as ${db_url}`)
+        console.log(`Successfull connected to database with url as ${db_url}`)
     }
     catch(err){
         console.log(err)
