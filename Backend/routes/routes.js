@@ -1,10 +1,11 @@
 const express = require('express');
 const Moment = require('../models/Moment');
-const app = express();
+const router = express.Router();
+// const app = express();
 
-app.use(express.json())
+router.use(express.json())
 
-app.post('/api/moments', async(req, res) => {
+router.post('/api/moments', async(req, res) => {
     try{
         const {title, description, imageUrl, videoUrl, date} = req.body;
 
@@ -21,7 +22,7 @@ app.post('/api/moments', async(req, res) => {
     }
 });
 
-app.get('/api/moments', async(req, res) => {
+router.get('/api/moments', async(req, res) => {
     try{
         const mom = await Moment.find();
         res.json(mom);
@@ -30,7 +31,7 @@ app.get('/api/moments', async(req, res) => {
     }
 });
 
-app.get('/api/moments/:id', async(req, res) => {
+router.get('/api/moments/:id', async(req, res) => {
     try{
         const idMoment = await Moment.findById(req.params.id);
 
@@ -44,7 +45,7 @@ app.get('/api/moments/:id', async(req, res) => {
     }
 });
 
-app.put('/api/moments/:id', async(req, res) => {
+router.put('/api/moments/:id', async(req, res) => {
     try{
         const {title, description, imageUrl, videoUrl, date} = req.body;
 
@@ -61,7 +62,7 @@ app.put('/api/moments/:id', async(req, res) => {
     }
 }) 
 
-app.delete('/api/moments/:id', async(req, res) => {
+router.delete('/api/moments/:id', async(req, res) => {
     try{    
         const delMoment = await Moment.findByIdAndDelete(req.params.id);
 
@@ -76,4 +77,4 @@ app.delete('/api/moments/:id', async(req, res) => {
     }
 })
 
-module.exports = app
+module.exports = router
