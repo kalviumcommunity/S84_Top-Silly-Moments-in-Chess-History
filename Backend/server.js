@@ -1,7 +1,7 @@
 const express = require("express");
 const { connect } = require("mongoose");
 const connectToDb = require("./database/db");
-const Moment = require('./controllers/momentsControllesrs');
+const Moment = require('./routes/routes');
 const app = express();
 require('dotenv').config();
 
