@@ -7,11 +7,7 @@
 body{
   height: 100vh;
   width: 100%;
-  /* background: linear-gradient(#AA60C8, #FFDFEF); */
-  /* background-image: url(../assests/ai-generated-8241324_1280.webp); */
-  background-size: cover;
-  background: linear-gradient(pink, crimson);
-
+  background: linear-gradient(blue, crimson);
 }
 
 .landing__page{
