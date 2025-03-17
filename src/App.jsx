@@ -1,6 +1,9 @@
 import LandingPage from "./LandingPage"
 import Chessmoment from "../component/Chessmoment"
 import HvsM from '../assests/hikaru vs magnus.jpg'
+import NavBar from "../component/Navbar";
+import "tailwindcss";
+
 
 function App() {
 
@@ -13,6 +16,7 @@ function App() {
 
   return (
     <>
+      <NavBar/>
       <LandingPage/>
       <Chessmoment {...dummyData} />
     </>
