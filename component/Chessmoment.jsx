@@ -7,7 +7,7 @@ function Chessmoment({ image, move, player, description}){
             <img style={{width: "400px"}} src={image} alt="Chess moment" />
         </div>
             <h2> {move} </h2>
-            <h4> {player} </h4>
+            <h5> {player} </h5>
             <p> {description} </p>
         </>
     )
