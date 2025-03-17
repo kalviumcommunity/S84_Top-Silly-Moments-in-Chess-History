@@ -8,6 +8,8 @@ Welcome to Top Silly Moments in Chess History, a web platform dedicated to showc
 
 React ⚛️ for a dynamic and interactive UI
 
+deployement link - https://top-silly-chess-moment.pages.dev/
+
 Tailwind CSS 🎨 for sleek and responsive styling
 
 🔹 Backend:
