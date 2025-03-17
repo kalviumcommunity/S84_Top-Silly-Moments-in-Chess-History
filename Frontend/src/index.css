@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 *{
   font-family:  sans-serif;
   margin: 0;
@@ -7,7 +9,7 @@
 body{
   height: 100vh;
   width: 100%;
-  background: linear-gradient(blue, crimson);
+  background: pink;
 }
 
 .landing__page{
@@ -19,4 +21,12 @@ body{
 
 p{
   padding-top: 1.2rem;
+}
+
+.king__icon{
+  padding: 1.1rem;
+  margin: 1.1rem;
+  margin-top: 0;
+  padding-top: .5rem;
+  padding-left: .3rem;
 }
