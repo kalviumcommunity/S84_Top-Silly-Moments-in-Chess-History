@@ -1,18 +1,20 @@
 const express = require('express');
 const Moment = require('../models/moment');
 const router = express.Router();
-// const app = express();
+const mongoose = require('mongoose')
+
+const momentsCollection = () => mongoose.connection.db.collection("Moments");
 
 router.use(express.json())
 
-router.post('/api/moments', async(req, res) => {
+router.post('/moments', async(req, res) => {
     try{
         const {title, description, imageUrl, videoUrl, date} = req.body;
 
         if (!title || (!imageUrl && !videoUrl )){
             return res.status(400).json({message: `Title, ImageUrl, VideoUrl is required`})
         }
-        const newMoment = new Moment({title, description, imageUrl, videoUrl, date});
+        const newMoment = new momentsCollection({title, description, imageUrl, videoUrl, date});
         await newMoment.save();
 
         res.status(201).json({message: `Created successfully`, moment: newMoment})
@@ -22,18 +24,19 @@ router.post('/api/moments', async(req, res) => {
     }
 });
 
-router.get('/api/moments', async(req, res) => {
-    try{
-        const mom = await Moment.find();
-        res.json(mom);
-    }catch(err){
-        console.log(`You are facing and error ${err}`);
+router.get("/moments", async (req, res) => {
+    try {
+        const moments = await momentsCollection().find({}).toArray();
+        res.status(200).json(moments);
+    } catch (error) {
+        res.status(500).json({ message: "Error fetching moments", error });
     }
 });
 
-router.get('/api/moments/:id', async(req, res) => {
+
+router.get('/moments/:id', async(req, res) => {
     try{
-        const idMoment = await Moment.findById(req.params.id);
+        const idMoment = await momentsCollection.findById(req.params.id);
 
         if (!idMoment){
             return res.status(404).json({message: `Error 404 Moment not found!`})
@@ -45,7 +48,7 @@ router.get('/api/moments/:id', async(req, res) => {
     }
 });
 
-router.put('/api/moments/:id', async(req, res) => {
+router.put('/moments/:id', async(req, res) => {
     try{
         const {title, description, imageUrl, videoUrl, date} = req.body;
 
@@ -62,7 +65,7 @@ router.put('/api/moments/:id', async(req, res) => {
     }
 }) 
 
-router.delete('/api/moments/:id', async(req, res) => {
+router.delete('/moments/:id', async(req, res) => {
     try{    
         const delMoment = await Moment.findByIdAndDelete(req.params.id);
 

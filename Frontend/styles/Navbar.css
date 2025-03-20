@@ -1,0 +1,51 @@
+.nav__all{
+  display: flex;
+  align-items: center;
+  padding: .6rem;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  border: 2px solid black;
+}
+
+.king__icon{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.nav__list{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  font-style: none;
+  text-decoration: none;
+  color: black;
+}
+.unorder__list{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+button{
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.magnus__gif{
+  width: 225px;
+  height: 80px;
+  padding-left: 2.5rem;
+  padding-top: 0;
+  margin-top: 0;
+}
