@@ -1,4 +1,4 @@
-import vid from '../assests/DarkSoulsBonfireandMainThemeOst.mp4'
+import vid from '../assets/DarkSoulsBonfireandMainThemeOst.mp4'
 
 function LandingPage(){
 

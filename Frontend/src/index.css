@@ -32,3 +32,10 @@ li{
   background-color: crimson;
   color: white;
 }
+
+add__button{
+  background-color: black;
+  padding: 2rem;
+  color: white;
+  border: 1px solid blue;
+}

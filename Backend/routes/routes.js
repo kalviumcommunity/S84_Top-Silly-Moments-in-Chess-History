@@ -3,8 +3,6 @@ const Moment = require('../models/moment');
 const router = express.Router();
 const mongoose = require('mongoose')
 
-const momentsCollection = () => mongoose.connection.db.collection("Moments");
-
 router.use(express.json())
 
 router.post('/moments', async(req, res) => {
@@ -14,7 +12,7 @@ router.post('/moments', async(req, res) => {
         if (!title || (!imageUrl && !videoUrl )){
             return res.status(400).json({message: `Title, ImageUrl, VideoUrl is required`})
         }
-        const newMoment = new momentsCollection({title, description, imageUrl, videoUrl, date});
+        const newMoment = new Moment({title, description, imageUrl, videoUrl, date});
         await newMoment.save();
 
         res.status(201).json({message: `Created successfully`, moment: newMoment})
@@ -26,7 +24,7 @@ router.post('/moments', async(req, res) => {
 
 router.get("/moments", async (req, res) => {
     try {
-        const moments = await momentsCollection().find({}).toArray();
+        const moments = await Moment.find();
         res.status(200).json(moments);
     } catch (error) {
         res.status(500).json({ message: "Error fetching moments", error });
@@ -36,7 +34,7 @@ router.get("/moments", async (req, res) => {
 
 router.get('/moments/:id', async(req, res) => {
     try{
-        const idMoment = await momentsCollection.findById(req.params.id);
+        const idMoment = await Moment.findById(req.params.id);
 
         if (!idMoment){
             return res.status(404).json({message: `Error 404 Moment not found!`})

@@ -1,7 +1,7 @@
 const {connect} = require('mongoose');
 
 const connectToDb = async (url) => {
-    await connect(url, { dbName: "SillyChessDB" })
+    await connect(url)
 }
 
 module.exports = connectToDb;
