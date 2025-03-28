@@ -1,6 +1,5 @@
 const express = require("express");
 const cors = require('cors');
-const { connect } = require("mongoose");
 const connectToDb = require("./database/db");
 const Moment = require('./routes/routes');
 const app = express();
@@ -10,7 +9,7 @@ app.use(cors());
 
 require('dotenv').config();
 
-const Port = process.env.PORT || 6969;
+const Port = process.env.PORT || 6900;
 const db_url = process.env.DB_URL 
 
 app.get("/", (req, res) => {
@@ -21,9 +20,7 @@ app.get('/ping', (req, res) => {
     res.send("<h1> I am currently inside ping destination! </h1>")
 })
 
-app.use('/api', Moment);
-
-
+app.use('/home', Moment);
 
 app.listen(Port, async() => {
     try{

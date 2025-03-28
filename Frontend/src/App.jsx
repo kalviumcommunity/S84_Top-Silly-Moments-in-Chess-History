@@ -1,8 +1,9 @@
-import LandingPage from "./LandingPage"
-import Chessmoment from "../component/Chessmoment"
-import HvsM from '../assests/hikaru vs magnus.jpg'
-import NavBar from "../component/Navbar";
-import ShowMoment from "../component/ShowMoment";
+import LandingPage from "../components/LandingPage"
+import Chessmoment from "../components/Chessmoment"
+import HvsM from '../assets/hikaru vs magnus.jpg'
+import NavBar from "../components/Navbar";
+import ShowMoment from "../components/ShowMoment";
+import AddMoment from "../components/AddMoment";
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
       <Chessmoment {...dummyData1} />
       <Chessmoment {...dummyData1} />
       </div>
+      <AddMoment />
     </>
   )
 }

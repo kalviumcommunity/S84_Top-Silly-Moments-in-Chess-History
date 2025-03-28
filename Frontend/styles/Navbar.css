@@ -35,12 +35,12 @@ a{
   gap: 2rem;
 }
 
-button{
+/* button{
   border: none;
   background: none;
   font-size: 1.5rem;
   font-weight: 700;
-}
+} */
 
 .magnus__gif{
   width: 225px;

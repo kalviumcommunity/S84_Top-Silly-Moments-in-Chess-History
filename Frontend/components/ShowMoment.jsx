@@ -5,7 +5,7 @@ function ShowMoment(){
     const [moment, setMoment] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:6900/api/moments")
+        fetch("http://localhost:6900/home/moments")
         .then((res) => res.json())
         .then((data) => setMoment(data))
         .catch((err) => console.log(err))
