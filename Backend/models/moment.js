@@ -19,6 +19,11 @@ const momentSchema = new mongoose.Schema({
     date: {
         type: Date,
         default: Date.now
+    },
+    created_by: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'User'
     }
 }, {timestamps: true})
 

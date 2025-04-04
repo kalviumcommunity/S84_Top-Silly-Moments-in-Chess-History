@@ -13,6 +13,7 @@
   }
   
   input,
+  select,
   textarea {
     padding: 10px;
     font-size: 16px;
@@ -38,3 +39,22 @@
     color: red;
     margin-bottom: 10px;
   }
+
+
+select {
+    cursor: pointer;
+    appearance: none;
+    background-color: #f8f9fa;
+}
+
+.addMoment__focus:focus {
+    outline: none;
+    border-color: #28a745;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+}
+
+option:checked, 
+option:hover {
+  background-color: #FF00BF !important;
+  color: white;
+}
