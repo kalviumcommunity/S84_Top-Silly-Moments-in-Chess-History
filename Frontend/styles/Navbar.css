@@ -1,51 +1,70 @@
-.nav__all{
+.navbar__all{
   display: flex;
   align-items: center;
-  padding: .6rem;
-  padding-top: 0rem;
-  padding-bottom: 0rem;
-  border: 2px solid black;
+  border-bottom: 2px solid black;
 }
 
-.king__icon{
-  display: flex;
-  justify-content: flex-start;
-}
-
-.nav__list{
-  height: 100%;
+.navbar__list__div{
   width: 100%;
-  display: flex;
+  display: flex;  
   justify-content: flex-end;
-  align-items: flex-end;
 }
 
-li{
+.navbar__list{
   list-style: none;
 }
 
-a{
+.navbar__links{
   font-style: none;
   text-decoration: none;
   color: black;
 }
-.unorder__list{
+
+.navbar__unorder__list{
   display: flex;
   flex-direction: row;
   gap: 2rem;
 }
 
-/* button{
-  border: none;
-  background: none;
-  font-size: 1.5rem;
-  font-weight: 700;
-} */
-
 .magnus__gif{
-  width: 225px;
-  height: 80px;
   padding-left: 2.5rem;
   padding-top: 0;
+  width: 225px;
+  height: 90px;
   margin-top: 0;
+  margin-bottom: -0.4rem;
+}
+
+.king__icon{
+  display: flex;
+  justify-content: flex-start;
+  padding: 1rem;
+}
+/* .king__icon h1 {
+  box-shadow: 0 0 100px 1px black;
+} */
+
+.navbar__gif__container{
+  opacity: 10;
+  transform: scale(0);
+  transform-origin: left;
+  transition: all 0.3s ease-in-out;   
+}
+.navbar__gif__container.show{
+  transform: scale(1);
+  opacity: 50;
+}
+.navbar__gif__container.hide{
+
+}
+
+.navbar__button{
+  border: none;
+  /* padding: 1rem; */
+  background: inherit;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
