@@ -1,0 +1,76 @@
+
+.updateMoment__container {
+    width: 70%;
+    margin: 50px auto;
+    padding: 20px;
+    background: #e9e4ca;
+    border: 2px solid #B58863;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0px 0px 9px 1px #B58863;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .updateMoment__container:hover {
+    transform: scale(1.02);
+  }
+  
+  .updateMoment__heading {
+    color: #1A1A1A;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .updateMoment__form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .updateMoment__input,
+  .updateMoment__textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px;
+    border: 2px solid #B58863;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    background: #e9bd98;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .updateMoment__textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  
+  .updateMoment__input:focus,
+  .updateMoment__textarea:focus {
+    outline: none;
+    border-color: #1A1A1A;
+    box-shadow: 0px 0px 5px 2px #B58863;
+  }
+  
+  .updateMoment__button {
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+  }
+  
+  .updateMoment__button:hover {
+    background-color: #333;
+    transform: scale(1.05);
+  }
+  
+  .updateMoment__loadingText {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
