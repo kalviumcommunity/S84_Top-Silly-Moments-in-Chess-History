@@ -4,10 +4,11 @@
     const AddMoment = () => {
 
         const [moments, setMoments] = useState([]);
-        const [title, setTitle] = useState("")
-        const [description, setDescription] = useState("")
-        const [imageUrl, setImageUrl] = useState("")
-        const [videoUrl, setVideoUrl] = useState("")
+        const [title, setTitle] = useState("");
+        const [description, setDescription] = useState("");
+        const [imageUrl, setImageUrl] = useState("");
+        const [videoUrl, setVideoUrl] = useState("");
+        const [errMsg, setErrMsg] = useState("");
 
         useEffect(() => {
             fetch("http://localhost:6900/api/moments")
@@ -18,6 +19,7 @@
 
         const handleSubmit = async (e) =>{
             e.preventDefault();
+            setErrMsg("");
 
             const newMoment = {title, description , imageUrl, videoUrl};
 
@@ -28,9 +30,12 @@
                   body: JSON.stringify(newMoment),
                 });
             
-                if (!response.ok) throw new Error("Failed to add moment");
-            
+                
                 const responseData = await response.json();
+                if (!response.ok){
+                    setErrMsg(responseData.message || "Failed to add moment")
+                    return;
+                }
             
                 setMoments([...moments, responseData]);
                 setTitle("");
@@ -39,6 +44,7 @@
                 setVideoUrl("");
               } catch (err) {
                 console.error("Error:", err);
+                setErrMsg(`Something went wrong`)
               }
             };
 
@@ -53,21 +59,7 @@
                     <input type="text" placeholder="Video Url" value={videoUrl} onChange={(e) => setVideoUrl(e.target.value)} required/>
                     <button className="add__button">Add moment</button>
                 </form>
-
-                {/* <h3>List of other Silly Moments</h3> */}
-                {/* <ul className="AddMoment__list">
-                    {
-                        moments.map((moment) => (
-                            <li key={moment._id} className="AddMoment__item">
-                                <h4>{moment.title}</h4>
-                                <p>{moment.description}</p>
-                                <img src={moment.imageUrl} width="200" />
-                                <video src={moment.videoUrl}></video>
-                            </li>
-                        ))
-                    }
-                </ul> */}
-
+                {errMsg && <p className="AddMoment__error">{errMsg}</p>}
             </div>
         )
     }

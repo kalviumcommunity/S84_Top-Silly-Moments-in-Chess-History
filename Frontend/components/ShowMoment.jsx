@@ -20,7 +20,9 @@ function ShowMoment() {
 
   const handleDelete = async(id) => {
     const confirmDelete = window.confirm("Are you really sure you want to delete this moment? 🤨")
+
     if (!confirmDelete) return;
+    
     try{
       await axios.delete(`http://localhost:6900/api/moments/${id}`)
       fetchMoment();
