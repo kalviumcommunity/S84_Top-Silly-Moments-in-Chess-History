@@ -1,6 +1,6 @@
 import { FaChessKing, FaChessQueen } from "react-icons/fa";
 import { TbCircleLetterCFilled } from "react-icons/tb";
-import "../styles/NavBar.css";
+import "../styles/Navbar.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 

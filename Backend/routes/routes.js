@@ -2,10 +2,11 @@ const express = require('express');
 const Moment = require('../models/moment');
 const router = express.Router();
 const mongoose = require('mongoose')
+const ValidateMoment = require('../validator/Chessvalidation')
 
 router.use(express.json())
 
-router.post('/moments', async(req, res) => {
+router.post('/moments', ValidateMoment, async(req, res) => {
     try{
         const {title, description, imageUrl, videoUrl, date} = req.body;
 
