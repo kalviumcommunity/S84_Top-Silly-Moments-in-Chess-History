@@ -61,9 +61,9 @@ function NavBar() {
             </li>
           </ul>
         </div>
-        <h1>
-          <FaChessQueen />
-        </h1>
+          {/* <h1>
+            <FaChessQueen />
+          </h1> */}
       </div>
     </>
   );

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import '../styles/UpdateMoment.css'
+import "../styles/UpdateMoment.css";
 
 const UpdateMoment = () => {
   const { id } = useParams();
@@ -75,7 +75,9 @@ const UpdateMoment = () => {
             onChange={handleChange}
             required
           />
-          <button className="updateMoment__button" type="submit">Update</button>
+          <button className="updateMoment__button" type="submit">
+            Update
+          </button>
         </form>
       ) : (
         <p className="updateMoment__loadingText">Loading moment data...</p>

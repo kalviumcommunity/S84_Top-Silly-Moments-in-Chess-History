@@ -3,21 +3,20 @@ const Moment = require("../models/moment");
 const UserSchema = require("../models/UserSchema");
 const router = express.Router();
 const mongoose = require("mongoose");
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 const ValidateMoment = require("../validator/Chessvalidation");
-const authenticate = require('../middlewares/Userauth')
-const cookieParser = require('cookie-parser')
-require('dotenv').config();
+const authenticate = require("../middlewares/Userauth");
+const cookieParser = require("cookie-parser");
+require("dotenv").config();
 
 router.use(cookieParser());
 router.use(express.json());
 
-router.post("/moments",authenticate, ValidateMoment, async (req, res) => {
+router.post("/moments", authenticate, ValidateMoment, async (req, res) => {
   try {
-    const { title, description, imageUrl, videoUrl, date } =
-      req.body;
-      const created_by = req.user.userId;
+    const { title, description, imageUrl, videoUrl, date } = req.body;
+    const created_by = req.user.userId;
 
     if (!title || (!imageUrl && !videoUrl)) {
       return res
@@ -57,45 +56,42 @@ router.get("/moments", async (req, res) => {
   }
 });
 
-
 router.post("/users", async (req, res) => {
-    try {
-        const { name, email, password } = req.body;  
-        
-        if (!name || !email || !password) {
-          return res
-          .status(400)
+  try {
+    const { name, email, password } = req.body;
+
+    if (!name || !email || !password) {
+      return res
+        .status(400)
         .json({ message: `Name, Email, and Password are required` });
-      }
-        const existingUser = await UserSchema.findOne({ email });
+    }
+    const existingUser = await UserSchema.findOne({ email });
     if (existingUser) {
       return res.status(409).json({ message: "Email already registered" });
     }
-        
-      
+
     const hashedPass = await bcrypt.hash(password, 10);
     const newUser = new UserSchema({ name, email, password: hashedPass });
     await newUser.save();
 
-    const token = jwt.sign({userId: newUser._id}, "guleria", {expiresIn: "1h"})
-    
+    const token = jwt.sign({ userId: newUser._id }, "guleria", {
+      expiresIn: "1h",
+    });
+
     res.cookie("token", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "strict",
       maxAge: 60 * 60 * 1000,
-    })
-
+    });
 
     res
       .status(201)
       .json({ message: `User created successfully`, user: newUser, token });
-
-
-    } catch (err) {
-        res.status(500).json({ error: err });
-        console.error(err.message);
-    }
+  } catch (err) {
+    res.status(500).json({ error: err });
+    console.error(err.message);
+  }
 });
 
 router.get("/users", async (req, res) => {
@@ -107,46 +103,48 @@ router.get("/users", async (req, res) => {
   }
 });
 
-router.post("/users/login", async(req, res) => {
-  try{
-    const {email, password} = req.body;
-    const users = await UserSchema.findOne({email});
+router.post("/users/login", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const users = await UserSchema.findOne({ email });
 
-    if (!users || !(await bcrypt.compare(password, users.password))){
-      return res.status(400).json({message: `Invalid email or password!`})
+    if (!users || !(await bcrypt.compare(password, users.password))) {
+      return res.status(400).json({ message: `Invalid email or password!` });
     }
 
-    const token = jwt.sign({userId: users._id} , "guleria", {expiresIn: "1h"});
+    const token = jwt.sign({ userId: users._id }, "guleria", {
+      expiresIn: "1h",
+    });
     res.cookie("token", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "strict",
       maxAge: 60 * 60 * 1000,
-    })
-    res.json({message: `Logged in`, user: users, token});
-  }catch(err){
-    return res.status(500).json({error: `Login failed`})
+    });
+    res.json({ message: `Logged in`, user: users, token });
+  } catch (err) {
+    return res.status(500).json({ error: `Login failed` });
   }
-})
-
-router.get("/users/:userId", async (req, res) => {
-    try {
-        const { userId } = req.params;
-        const moments = await Moment.find({ created_by: userId });
-        res.status(200).json({moment: moments});
-    } catch (err) {
-        res.status(500).json({ error: err });
-    }
 });
 
-router.post('/users/logout', (req, res) => {
+router.get("/users/:userId", async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const moments = await Moment.find({ created_by: userId });
+    res.status(200).json({ moment: moments });
+  } catch (err) {
+    res.status(500).json({ error: err });
+  }
+});
+
+router.post("/users/logout", (req, res) => {
   res.clearCookie("token", {
     httpOnly: true,
     sameSite: "strict",
     secure: process.env.NODE_ENV === "production",
-  })
-  res.status(200).json({message: `Logged out successufully! `})
-})
+  });
+  res.status(200).json({ message: `Logged out successufully! ` });
+});
 
 router.get("/moments/:id", async (req, res) => {
   try {

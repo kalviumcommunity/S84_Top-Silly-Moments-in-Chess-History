@@ -9,7 +9,7 @@ function ShowMoment() {
 
   useEffect(() => {
     fetchMoment();
-  }, [])
+  }, []);
 
   const fetchMoment = () => {
     axios
@@ -18,18 +18,20 @@ function ShowMoment() {
       .catch((err) => console.log(err));
   };
 
-  const handleDelete = async(id) => {
-    const confirmDelete = window.confirm("Are you really sure you want to delete this moment? 🤨")
+  const handleDelete = async (id) => {
+    const confirmDelete = window.confirm(
+      "Are you really sure you want to delete this moment? 🤨"
+    );
 
     if (!confirmDelete) return;
-    
-    try{
-      await axios.delete(`http://localhost:6900/api/moments/${id}`)
+
+    try {
+      await axios.delete(`http://localhost:6900/api/moments/${id}`);
       fetchMoment();
-    }catch(err){
+    } catch (err) {
       console.error(err);
     }
-  }
+  };
 
   return (
     <div className="Show__moment">
@@ -73,8 +75,12 @@ function ShowMoment() {
               "Video URL:",
               moment.videoUrl || "No video URL provided"
             )}
-            <button onClick={() => navigate(`/update/${moment._id}`)}>Edit moment</button>
-            <button onClick={() => handleDelete(moment._id)}>Delete Moment</button>
+            <button onClick={() => navigate(`/update/${moment._id}`)}>
+              Edit moment
+            </button>
+            <button onClick={() => handleDelete(moment._id)}>
+              Delete Moment
+            </button>
           </li>
         ))}
       </ul>

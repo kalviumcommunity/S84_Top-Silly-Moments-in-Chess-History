@@ -1,4 +1,4 @@
-.Chessmoment__box{
+.Chessmoment__box {
     background: #708090;
     border: 1px solid rgb(73, 73, 73);
     padding: 1.5rem;
@@ -8,11 +8,13 @@
     align-items: center;
     justify-content: center;
 }
-.chessmoment__parent{
+
+.chessmoment__parent {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.chessmoment__content{
+
+.chessmoment__content {
     background-color: #708090;
 }

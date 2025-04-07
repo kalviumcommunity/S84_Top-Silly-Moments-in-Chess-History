@@ -1,59 +1,59 @@
 .AddMoment__container {
-    /* max-width: 600px; */
-    width: 60%;
-    margin: auto;
-    text-align: center;
-  }
-  
-  .AddMoment__form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
-  input,
-  select,
-  textarea {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  .add__button {
-    padding: 10px;
-    font-size: 20px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .add__button:hover {
-    background-color: #218838;
-  }
+  /* max-width: 600px; */
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
 
-  .AddMoment__error {
-    color: red;
-    margin-bottom: 10px;
-  }
+.AddMoment__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input,
+select,
+textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.add__button {
+  padding: 10px;
+  font-size: 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add__button:hover {
+  background-color: #218838;
+}
+
+.AddMoment__error {
+  color: red;
+  margin-bottom: 10px;
+}
 
 
 select {
-    cursor: pointer;
-    appearance: none;
-    background-color: #f8f9fa;
+  cursor: pointer;
+  appearance: none;
+  background-color: #f8f9fa;
 }
 
 .addMoment__focus:focus {
-    outline: none;
-    border-color: #28a745;
-    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+  outline: none;
+  border-color: #28a745;
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
 }
 
-option:checked, 
+option:checked,
 option:hover {
   background-color: #FF00BF !important;
   color: white;
