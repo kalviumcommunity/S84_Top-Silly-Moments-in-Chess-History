@@ -2,7 +2,7 @@ import { FaChessKing, FaChessQueen } from "react-icons/fa";
 import { TbCircleLetterCFilled } from "react-icons/tb";
 import "../styles/Navbar.css";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function NavBar() {
   const magnus__gif =
@@ -50,7 +50,9 @@ function NavBar() {
               </a>
             </li>
             <li className="navbar__list">
-              <button className="navbar__button">Sign Up</button>
+              <Link className="navbar__button" to="/signUp">
+                Sign-Up
+              </Link>
             </li>
             <li className="navbar__list">
               <a className="navbar__links" href="#">
