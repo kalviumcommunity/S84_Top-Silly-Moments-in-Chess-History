@@ -5,6 +5,8 @@ import HvsM from '../assets/hikaru vs magnus.jpg'
 import NavBar from "../components/Navbar";
 import ShowMoment from "../components/ShowMoment";
 import AddMoment from "../components/AddMoment";
+import LoginUser from "../pages/LoginUser";
+import SignUpUser from "../pages/SignUpUser";
 import UpdateMoment from "../components/UpdateMoment";
 
 function App() {
@@ -38,6 +40,8 @@ function App() {
         </>
       } />
       <Route path="/update/:id" element={<UpdateMoment />} />
+      <Route path="/login" element={<LoginUser />} />
+      <Route path="/signUp" element={<SignUpUser />} />
     </Routes>
   </Router>
   )
