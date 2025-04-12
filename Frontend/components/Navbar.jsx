@@ -31,7 +31,8 @@ function NavBar() {
       setIsLoggedIn(false);
         setUsername(null);
       alert(`Logged out!`);
-      navigate('/show-moment')
+      navigate('/show-moment');
+
     }catch(err){
       console.error(err)
     }
