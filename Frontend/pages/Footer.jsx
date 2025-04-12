@@ -25,7 +25,7 @@ const Footer = () => {
         </a>
       </div>
       <p className="footer__text">
-        &copy; {new Date().getFullYear()} Top Silly Moments in Chess History. All rights reserved.
+        &copy; {new Date().getFullYear()} Top Silly Moments in Chess History. All rights reserved By दादा अविनाश गुलेरिया.
       </p>
     </footer>
   );

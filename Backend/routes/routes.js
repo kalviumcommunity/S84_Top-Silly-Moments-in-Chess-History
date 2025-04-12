@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const ValidateMoment = require("../validator/Chessvalidation");
-const authenticate = require('../middlewares/Userauth')
+const {authenticate, verifyAdmin} = require('../middlewares/Userauth')
 const cookieParser = require('cookie-parser')
 require('dotenv').config();
 
@@ -100,7 +100,7 @@ router.post("/users", async (req, res) => {
 
 router.get("/users", async (req, res) => {
   try {
-    const users = await UserSchema.find({}, "name");
+    const users = await UserSchema.find();
     res.json(users);
   } catch (err) {
     res.status(500).json({ error: err });
@@ -183,7 +183,7 @@ router.put("/moments/:id", async (req, res) => {
   }
 });
 
-router.delete("/moments/:id", async (req, res) => {
+router.delete("/moments/:id",authenticate, verifyAdmin, async (req, res) => {
   try {
     const delMoment = await Moment.findByIdAndDelete(req.params.id);
 
@@ -195,5 +195,27 @@ router.delete("/moments/:id", async (req, res) => {
     res.status(500).json({ message: `Internal server error` });
   }
 });
+
+router.put('/users/make-admin',authenticate,   verifyAdmin, async(req, res) => {
+  const {email} = req.body;
+  const user = await UserSchema.findOneAndUpdate({email}, {isAdmin: true}, {new: true});
+  if (!user){
+    return res.status(404).json({message: `User not found!`})
+  }
+  res.json({message: `${email} is now admin!`})
+})
+
+router.put("/users/remove-admin",authenticate, verifyAdmin, async (req, res) => {
+  const { email } = req.body;
+  const user = await UserSchema.findOneAndUpdate({ email }, { isAdmin: false });
+  if (!user) return res.status(404).json({ message: "User not found" });
+  res.json({ message: `${email} is no longer an admin` });
+});
+
+// router.delete("/api/moments/:id", verifyAdmin, async (req, res) => {
+//   await Moment.findByIdAndDelete(req.params.id);
+//   res.json({ message: "Moment deleted" });
+// });
+
 
 module.exports = router;

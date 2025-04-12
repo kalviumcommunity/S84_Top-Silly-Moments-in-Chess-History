@@ -12,6 +12,7 @@ import Contact from "../pages/Contact";
 import Footer from "../pages/Footer";
 import Loader from "../pages/Loader";
 import { useEffect, useState } from "react";
+import AdminDashboard from "../Admin/AdminDashboard";
 
 function App() {
 
@@ -46,6 +47,7 @@ function App() {
         <Route path="/add-moment" element={<AddMoment />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/show-moment" element={<ShowMoment />} />
+        <Route path="/Dada-dashboard" element={<AdminDashboard/>} />
       </Routes>
       <Footer/>
     </Router>

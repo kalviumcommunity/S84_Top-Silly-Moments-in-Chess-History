@@ -22,12 +22,20 @@ function ShowMoment() {
     const confirmDelete = window.confirm("Are you really sure you want to delete this moment? 🤨")
 
     if (!confirmDelete) return;
-    
+    const token = localStorage.getItem("token");
     try{
-      await axios.delete(`http://localhost:6900/api/moments/${id}`)
+      await axios.delete(`http://localhost:6900/api/moments/${id}`,{
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
       fetchMoment();
     }catch(err){
+      if (err.response?.status === 401) {
+        alert('Your session has expired. Please log in again.');
+    }
       console.error(err);
+      alert(`Only admin can delete moments!`)
     }
   }
 
