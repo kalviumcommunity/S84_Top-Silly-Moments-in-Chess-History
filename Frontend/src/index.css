@@ -1,40 +1,28 @@
-/* Global Styles */
 * {
-  font-family: "Kanit", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Kanit", sans-serif;
+  scroll-behavior: smooth;
 }
 
-/* Body Styling */
 body {
-  height: 100vh;
   width: 100%;
-  background-color: #F0D9B5; /* Light beige, like chess.com */
-  color: #333;
+  min-height: 100vh;
+  background-color: #1a1a1a;
+  color: #f2f2f2;
+  line-height: 1.6;
 }
 
-/* Landing Page */
-.landing__page {
-  text-align: center;
-  padding: 1rem;
-  background-color: #B58863; /* Chessboard dark square color */
-  color: white;
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
-
-/* Button Styling */
-.add__button {
-  border: none;
-  background-color: #1A1A1A;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: 700;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease-in-out;
+::-webkit-scrollbar-track {
+  background: #222;
 }
-
-.add__button:hover {
-  background-color: #333;
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(145deg, #d9d9d9, #999999);
+  border-radius: 4px;
+  box-shadow: inset 0 0 4px #ffffff30;
 }

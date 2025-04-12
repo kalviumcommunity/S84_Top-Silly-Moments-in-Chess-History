@@ -40,7 +40,7 @@ const LoginUser = () => {
                 <input onChange={handleChange} placeholder="Password" name="password" type="password" required/>
                 <button type="submit">Login</button>
             </form>
-            <Link to="/signUp"><h2>New user? Sign-Up</h2></Link>
+            <Link to="/sign-up"><p>New user? Sign-Up</p></Link>
 
         </div>
     )

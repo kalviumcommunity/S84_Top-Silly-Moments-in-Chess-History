@@ -15,7 +15,6 @@
         
         const handleSubmit = async(e) => {
             e.preventDefault();
-
             try{
                 const response = await axios.post(`http://localhost:6900/api/users`, user, {withCredentials: true})
                 localStorage.setItem("token", response.data.token);
@@ -39,7 +38,7 @@
                     <input onChange={handleChange} placeholder="Password" name="password" type="password" required/>
                     <button type="submit">Sign-Up</button>
                 </form>
-                <Link to="/login"><h2>Already have an account? Login</h2></Link>
+                <Link to="/log-in"><p>Already have an account? Login</p></Link>
                 
             </div>
         )

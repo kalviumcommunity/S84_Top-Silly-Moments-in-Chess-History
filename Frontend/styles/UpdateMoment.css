@@ -1,76 +1,86 @@
-
 .updateMoment__container {
-    width: 70%;
-    margin: 50px auto;
-    padding: 20px;
-    background: #e9e4ca;
-    border: 2px solid #B58863;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0px 0px 9px 1px #B58863;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .updateMoment__container:hover {
-    transform: scale(1.02);
-  }
-  
-  .updateMoment__heading {
-    color: #1A1A1A;
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
-  .updateMoment__form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-  }
-  
-  .updateMoment__input,
-  .updateMoment__textarea {
-    width: 100%;
-    max-width: 500px;
-    padding: 12px;
-    border: 2px solid #B58863;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    background: #e9bd98;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .updateMoment__textarea {
-    resize: vertical;
-    min-height: 120px;
-  }
-  
-  .updateMoment__input:focus,
-  .updateMoment__textarea:focus {
-    outline: none;
-    border-color: #1A1A1A;
-    box-shadow: 0px 0px 5px 2px #B58863;
-  }
-  
-  .updateMoment__button {
-    border: none;
-    background-color: black;
-    color: white;
-    font-size: 1.3rem;
-    font-weight: bold;
-    padding: 12px 25px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
-  }
-  
-  .updateMoment__button:hover {
-    background-color: #333;
-    transform: scale(1.05);
-  }
-  
-  .updateMoment__loadingText {
-    font-size: 1.2rem;
-    color: #555;
-  }
-  
+  width: 70%;
+  margin: 50px auto;
+  padding: 30px;
+  background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+  border: 1.5px solid #c0c0c0;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(192, 192, 192, 0.15);
+  transition: all 0.3s ease-in-out;
+}
+
+.updateMoment__container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.updateMoment__heading {
+  color: #f0f0f0;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  font-family: 'Georgia', serif;
+  text-shadow: 0 0 4px #aaa;
+}
+
+.updateMoment__form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+}
+
+.updateMoment__input,
+.updateMoment__textarea {
+  width: 100%;
+  max-width: 520px;
+  padding: 14px;
+  border: 1.5px solid #c0c0c0;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  background: #2f2f2f;
+  color: #f2f2f2;
+  transition: all 0.3s ease-in-out;
+}
+
+.updateMoment__input::placeholder,
+.updateMoment__textarea::placeholder {
+  color: #aaa;
+}
+
+.updateMoment__textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.updateMoment__input:focus,
+.updateMoment__textarea:focus {
+  outline: none;
+  border-color: #ffffff;
+  box-shadow: 0 0 8px #c0c0c0;
+}
+
+.updateMoment__button {
+  border: none;
+  background: linear-gradient(to right, #c0c0c0, #a0a0a0);
+  color: #1a1a1a;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 12px 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.updateMoment__button:hover {
+  background: linear-gradient(to right, #d5d5d5, #bfbfbf);
+  transform: scale(1.05);
+  box-shadow: 0 0 6px #c0c0c0;
+}
+
+.updateMoment__loadingText {
+  font-size: 1.1rem;
+  color: #999;
+  margin-top: 10px;
+}

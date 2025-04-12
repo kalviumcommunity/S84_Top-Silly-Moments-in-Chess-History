@@ -73,8 +73,8 @@ router.post("/users", async (req, res) => {
     }
         
       
-    const hashedPass = await bcrypt.hash(password, 10);
-    const newUser = new UserSchema({ name, email, password: hashedPass });
+    // const hashedPass = await bcrypt.hash(password, 10);
+    const newUser = new UserSchema({ name, email, password });
     await newUser.save();
 
     const token = jwt.sign({userId: newUser._id}, "guleria", {expiresIn: "1h"})
@@ -112,7 +112,7 @@ router.post("/users/login", async(req, res) => {
     const {email, password} = req.body;
     const users = await UserSchema.findOne({email});
 
-    if (!users || !(await bcrypt.compare(password, users.password))){
+    if (!users || !password){
       return res.status(400).json({message: `Invalid email or password!`})
     }
 

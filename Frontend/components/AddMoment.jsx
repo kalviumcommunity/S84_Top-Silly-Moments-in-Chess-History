@@ -1,9 +1,10 @@
     import { useState, useEffect } from "react";
     import '../styles/AddMoment.css'
     import axios from "axios";
+    import {useNavigate} from 'react-router-dom'
 
     const AddMoment = () => {
-
+        const navigate = useNavigate();
         const [moments, setMoments] = useState([]);
         const [title, setTitle] = useState("");
         const [description, setDescription] = useState("");
@@ -30,20 +31,16 @@
             setErrMsg("");
 
             const newMoment = {title, description , imageUrl, videoUrl, created_by: createdBy};
+            const token = localStorage.getItem("token")
 
             try {
-                const response = await fetch("http://localhost:6900/api/moments", {
-                  method: "POST",
-                  headers: { "Content-type": "application/json" },
-                  body: JSON.stringify(newMoment),
+                const response = await axios.post("http://localhost:6900/api/moments",newMoment, 
+                  {headers: { Authorization: `Bearer ${token}` },
+                  withCredentials: true,
                 });
             
                 
-                const responseData = await response.json();
-                if (!response.ok){
-                    setErrMsg(responseData.message || "Failed to add moment")
-                    return;
-                }
+                const responseData = response.data;   
             
                 setMoments([...moments, responseData]);
                 setTitle("");
@@ -51,9 +48,11 @@
                 setImageUrl("");
                 setVideoUrl("");
                 setCreatedBy("");
+                alert("Added a moment successfully");
+                navigate('/see-moments')
               } catch (err) {
                 console.error("Error:", err);
-                setErrMsg(`Something went wrong`)
+                setErrMsg(`You need to Sign-Up or Login to add`)
               }
             };
 

@@ -1,55 +1,91 @@
-/* SignUpUser.css */
 .signup-container {
-    max-width: 400px;
-    margin: 80px auto;
-    padding: 30px;
-    background-color: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 100px auto;
+  padding: 50px;
+  background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+  border: 1px solid #d0d0d0;
+  border-radius: 16px;
+  box-shadow:
+    0 0 25px rgba(255, 255, 255, 0.08),
+    inset 0 0 12px rgba(255, 255, 255, 0.04);
+  text-align: center;
+  font-family: "Kanit", sans-serif;
+  color: #f2f2f2;
+  animation: fadeInUp 0.8s ease-in-out;
 }
 
 .signup-container h2 {
-    margin-bottom: 20px;
-    color: #333;
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-size: 2.2rem;
+  text-shadow: 0 0 2px #fff, 0 0 2px #aaa;
+  letter-spacing: 1px;
 }
 
 .signup-container form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
 .signup-container input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
+  padding: 12px;
+  background: linear-gradient(145deg, #101010, #222);
+  border: 1px solid #c0c0c0;
+  border-radius: 10px;
+  color: #f2f2f2;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.05);
+}
+
+.signup-container input:focus {
+  outline: none;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+  transform: scale(1.01);
 }
 
 .signup-container button {
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    background-color: #4caf50;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #f2f2f2, #d9d9d9);
+  color: #111;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 .signup-container button:hover {
-    background-color: #45a049;
+  transform: scale(1.03);
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.4);
+  background: linear-gradient(145deg, #ffffff, #cfcfcf);
 }
 
 .signup-container a {
-    display: block;
-    margin-top: 15px;
-    text-decoration: none;
-    color: #007bff;
+  display: block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #c0c0c0;
+  font-weight: 300;
+  font-style: italic;
+  transition: color 0.2s ease;
 }
 
 .signup-container a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

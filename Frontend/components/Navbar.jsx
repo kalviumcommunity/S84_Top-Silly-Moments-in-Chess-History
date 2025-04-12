@@ -1,14 +1,41 @@
 import { FaChessKing, FaChessQueen } from "react-icons/fa";
-import { TbCircleLetterCFilled } from "react-icons/tb";
-import "../styles/Navbar.css";
-import { useState } from "react";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { useEffect, useState } from "react";
+import { IoIosArrowBack } from "react-icons/io";
+import { getCookieValue } from "./CookieValue";
 import { useNavigate, Link } from "react-router-dom";
+import "../styles/Navbar.css";
+import axios from "axios";
 
 function NavBar() {
-  const magnus__gif =
-    "https://media1.tenor.com/m/8SRBOekk9lUAAAAd/magnus-carlsen-tears-shirt.gif";
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showGif, setShowGif] = useState(false);
+  const [queenclick, setQueenclick] = useState(false);
+  const [username, setUsername] = useState(null);
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    const user = getCookieValue("username");
+    if (token || user){
+      setIsLoggedIn(true);
+      setUsername(user);
+    }
+  }, [])
+
+  const handleLogOut = async() => {
+    try{
+      await axios.post("http://localhost:6900/api/users/logout", {} , {withCredentials: true});
+      localStorage.removeItem("token");
+      setIsLoggedIn(false);
+        setUsername(null);
+      alert(`Logged out!`);
+      navigate('/show-moment')
+    }catch(err){
+      console.error(err)
+    }
+  }
 
   return (
     <>
@@ -16,12 +43,11 @@ function NavBar() {
         {/* =============================  King Icon GIF =========================== */}
         <div
           style={{ cursor: "pointer" }}
-          onClick={() => setShowGif(!showGif)}
           className="king__icon"
         >
-          <h1 className="king__iconh1">
-            <FaChessKing size={50} />
-          </h1>
+          <h1 onClick={() => navigate("/")} className="king__iconh1">
+            <FaChessKing size={45} />
+          </h1> 
         </div>
 
         {/* ============================ Conditionally rendendering the gif ======================  */}
@@ -32,38 +58,39 @@ function NavBar() {
         </div>
 
         {/* ================================= The list of the navbar =======================   */}
-        <div className="navbar__list__div">
-          <ul className="navbar__unorder__list">
-            <li className="navbar__list">
-              <Link className="navbar__links" to="/">
-                <h2> Home </h2>
-              </Link>
-            </li>
-            <li className="navbar__list">
-              <a className="navbar__links" href="#">
-                <h2> Videos </h2>
-              </a>
-            </li>
-            <li className="navbar__list">
-              <a className="navbar__links" href="#">
-                <h2> Add moment </h2>
-              </a>
-            </li>
-            <li className="navbar__list">
-              <Link className="navbar__button" to="/signUp">
-                Sign-Up
-              </Link>
-            </li>
-            <li className="navbar__list">
-              <a className="navbar__links" href="#">
-                <h2> Contact </h2>
-              </a>
-            </li>
-          </ul>
+        <div className={`queen__nav__links ${queenclick ? "show" : "hide"}`}>
+          <Link to="/" className="queen__link">Home</Link>
+          <Link to="/show-moment" className="queen__link">Moments</Link>
+          <Link to="/add-moment" className="queen__link">Add Moment</Link>
+          {!isLoggedIn ? (
+          <>
+            <Link to="/sign-up" className="queen__link signup">
+              Sign Up
+            </Link>
+            <Link to="/contact" className="queen__link">
+              Contact
+            </Link>
+          </>
+        ) : (
+          <div style={{display: "flex", justifyContent: "space-between"}}>
+
+            <Link style={{marginRight: "2rem"}} to="/contact" className="queen__link">
+              Contact
+            </Link>
+          <button onClick={handleLogOut} className="queen__link logout">
+            Logout
+          </button>
+          </div>
+
+        )}          
         </div>
-        <h1>
-          <FaChessQueen />
-        </h1>
+          
+          <div className="queen__icon" onClick={() => setQueenclick(!queenclick)} style={{cursor: "pointer"}}>
+          <h1>
+            </h1> 
+            <RxHamburgerMenu  size={40} />
+
+          </div>
       </div>
     </>
   );

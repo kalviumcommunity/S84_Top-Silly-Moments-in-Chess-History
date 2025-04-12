@@ -1,60 +1,166 @@
+
 .AddMoment__container {
-    /* max-width: 600px; */
-    width: 60%;
-    margin: auto;
-    text-align: center;
-  }
-  
-  .AddMoment__form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
-  input,
-  select,
-  textarea {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  .add__button {
-    padding: 10px;
-    font-size: 20px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .add__button:hover {
-    background-color: #218838;
-  }
+  max-width: 850px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+  color: #e6e6e6;
+  border-radius: 16px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 25px rgba(192, 192, 192, 0.2),
+              inset 0 0 10px rgba(255, 255, 255, 0.05);
+  font-family: 'Georgia', serif;
+  animation: fadeInContainer 0.8s ease;
+}
 
-  .AddMoment__error {
-    color: red;
-    margin-bottom: 10px;
+@keyframes fadeInContainer {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+.AddMoment__container h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #f5f5f5;
+  margin-bottom: 2.2rem;
+  text-shadow: 0 0 3px #ffffff, 0 0 2px #aaa;
+  letter-spacing: 1px;
+  animation: fadeInUp 0.6s ease;
+}
 
-select {
-    cursor: pointer;
-    appearance: none;
-    background-color: #f8f9fa;
+.AddMoment__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+.addMoment__focus {
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #c0c0c0;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
+  color: #fff;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: "Kanit", sans-serif;
+  transform: scale(1);
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.05);
 }
 
 .addMoment__focus:focus {
-    outline: none;
-    border-color: #28a745;
-    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+  border-color: #ffffff;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+  transform: scale(1.02);
 }
 
-option:checked, 
-option:hover {
-  background-color: #FF00BF !important;
-  color: white;
+textarea.addMoment__focus {
+  resize: vertical;
+  min-height: 120px;
+}
+
+select.addMoment__focus {
+  appearance: none;
+  background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
+  color: #fff;
+  border: 1px solid #c0c0c0;
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  font-family: "Kanit", sans-serif;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+select.addMoment__focus:focus {
+  border-color: #ffffff;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+  transform: scale(1.02);
+  outline: none;
+}
+
+select.addMoment__focus option {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 10px;
+  font-family: "Kanit", sans-serif;
+}
+
+select.addMoment__focus::-ms-expand {
+  display: none;
+}
+
+.add__button {
+  background: linear-gradient(145deg, #f2f2f2, #d9d9d9);
+  color: #111;
+  font-weight: bold;
+  padding: 0.9rem 1.4rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: "Kanit", sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.add__button:hover {
+  background: linear-gradient(145deg, #ffffff, #c0c0c0);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.AddMoment__error {
+  margin-top: 1.8rem;
+  color: #ff4d4d;
+  background-color: #2a0f0f;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ff4d4d;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Kanit", sans-serif;
+  animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-2px); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .AddMoment__container {
+    padding: 2rem 1.2rem;
+  }
+
+  .AddMoment__container h2 {
+    font-size: 1.8rem;
+  }
+
+  .addMoment__focus {
+    font-size: 0.95rem;
+  }
 }

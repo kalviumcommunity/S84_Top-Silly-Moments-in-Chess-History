@@ -1,0 +1,78 @@
+.contact-container {
+  max-width: 600px;
+  margin: 100px auto;
+  padding: 40px;
+  background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(192, 192, 192, 0.2),
+              inset 0 0 10px rgba(255, 255, 255, 0.04);
+  font-family: "Kanit", sans-serif;
+  color: #eaeaea;
+  animation: fadeInUp 0.8s ease-in-out;
+  text-align: center;
+}
+
+.contact-container h2 {
+  color: #f5f5f5;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 2px #ffffff, 0 0 2px #aaa;
+  letter-spacing: 1px;
+}
+
+.contact-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-container input,
+.contact-container textarea {
+  padding: 12px;
+  background: linear-gradient(145deg, #0f0f0f, #1c1c1c);
+  border: 1px solid #c0c0c0;
+  border-radius: 10px;
+  color: #f2f2f2;
+  font-size: 1rem;
+  resize: none;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.05);
+}
+
+.contact-container input:focus,
+.contact-container textarea:focus {
+  outline: none;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+  transform: scale(1.01);
+}
+
+.contact-container button {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #f2f2f2, #d9d9d9);
+  color: #111;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.contact-container button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  background: linear-gradient(145deg, #ffffff, #bfbfbf);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
