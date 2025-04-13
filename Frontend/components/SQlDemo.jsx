@@ -23,34 +23,34 @@ const SQlRoute = () => {
       .catch((err) => console.log(err));
   };
 
-return (
+  return (
     <div>
-        <h2>Select a user to view their SQL-created chess moments</h2>
+      <h2>Select a user to view their SQL-created chess moments</h2>
 
-        <select value={selectedUser} onChange={handleSelectUser}>
-            <option value="">-- Select a User --</option>
-            {users.map((user) => (
-                <option key={user.id} value={user.id}>
-                    {user.name}
-                </option>
-            ))}
-        </select>
+      <select value={selectedUser} onChange={handleSelectUser}>
+        <option value="">-- Select a User --</option>
+        {users.map((user) => (
+          <option key={user.id} value={user.id}>
+            {user.name}
+          </option>
+        ))}
+      </select>
 
-        <div>
-            {moments.length > 0
-                ? moments.map((moment) => (
-                        <div key={moment.id}>
-                            <h3>{moment.title}</h3>
-                            <p>{moment.description}</p>
-                            {moment.image_url && (
-                                <img src={moment.image_url} alt={moment.title} />
-                            )}
-                        </div>
-                    ))
-                : selectedUser && <p>No moments found for this user.</p>}
-        </div>
+      <div>
+        {moments.length > 0
+          ? moments.map((moment) => (
+              <div key={moment.id}>
+                <h3>{moment.title}</h3>
+                <p>{moment.description}</p>
+                {moment.image_url && (
+                  <img src={moment.image_url} alt={moment.title} />
+                )}
+              </div>
+            ))
+          : selectedUser && <p>No moments found for this user.</p>}
+      </div>
     </div>
-);
+  );
 };
 
 export default SQlRoute;
