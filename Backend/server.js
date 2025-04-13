@@ -3,6 +3,7 @@ const cors = require('cors');
 const connectToDb = require("./database/db");
 const Moment = require('./routes/routes');
 const app = express();
+const sqlRoute = require('./routes/sql_routes')
 
 app.use(express.json());
 app.use(cors({
@@ -24,6 +25,7 @@ app.get('/ping', (req, res) => {
 })
 
 app.use('/api', Moment);
+app.use('/', sqlRoute);
 
 app.listen(Port, async() => {
     try{
