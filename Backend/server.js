@@ -25,7 +25,7 @@ app.get('/ping', (req, res) => {
 })
 
 app.use('/api', Moment);
-app.use('/', sqlRoute);
+app.use('/sql', sqlRoute);
 
 app.listen(Port, async() => {
     try{

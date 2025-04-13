@@ -12,7 +12,6 @@
         const [videoUrl, setVideoUrl] = useState("");
         const [errMsg, setErrMsg] = useState("");
         const [users, setUsers] = useState([]);
-        const [createdBy, setCreatedBy] = useState("");
 
         useEffect(() => {
             axios.get("http://localhost:6900/api/moments")
@@ -30,15 +29,19 @@
             e.preventDefault();
             setErrMsg("");
 
-            const newMoment = {title, description , imageUrl, videoUrl, created_by: createdBy};
+            const newMoment = {title, description , imageUrl, videoUrl};
             const token = localStorage.getItem("token")
+
+            if (!token){
+                setErrMsg(`You need to signup or login to continue`);
+                return;
+            }
 
             try {
                 const response = await axios.post("http://localhost:6900/api/moments",newMoment, 
                   {headers: { Authorization: `Bearer ${token}` },
                   withCredentials: true,
                 });
-            
                 
                 const responseData = response.data;   
             
@@ -47,12 +50,11 @@
                 setDescription("");
                 setImageUrl("");
                 setVideoUrl("");
-                setCreatedBy("");
                 alert("Added a moment successfully");
-                navigate('/see-moments')
+                navigate('/show-moment')
               } catch (err) {
                 console.error("Error:", err);
-                setErrMsg(`You need to Sign-Up or Login to add`)
+                setErrMsg(`You need to Sign-Up or Login to add`, err)
               }
             };
 
@@ -65,7 +67,7 @@
                     <textarea className="addMoment__focus" type="text" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} required/>
                     <input className="addMoment__focus" type="text" placeholder="Image Url" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} required/>
                     <input className="addMoment__focus" type="text" placeholder="Video Url" value={videoUrl} onChange={(e) => setVideoUrl(e.target.value)} required/>
-                    <select className="addMoment__focus" value={createdBy} onChange={(e) => setCreatedBy(e.target.value)} required>
+                    <select className="addMoment__focus" required>
                         <option className="addMoment__focus" value="">Select User</option>
                             {
                                 users.map((user) => (

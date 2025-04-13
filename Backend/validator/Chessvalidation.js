@@ -1,11 +1,10 @@
 const Joi = require('joi')
 
 const chessValidation = Joi.object({
-    title: Joi.string().min(5).max(30).required(),
+    title: Joi.string().min(5).max(50).required(),
     description: Joi.string().min(10).max(500).required(),
     imageUrl: Joi.string().uri().required(),
-    videoUrl: Joi.string().uri(),
-    created_by: Joi.string().required()
+    videoUrl: Joi.string().uri()
 })
 
 const ValidateMoment = (req, res, next) => {

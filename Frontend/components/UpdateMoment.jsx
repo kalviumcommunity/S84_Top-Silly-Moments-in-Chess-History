@@ -28,7 +28,7 @@ const UpdateMoment = () => {
     e.preventDefault();
     try {
       await axios.put(`http://localhost:6900/api/moments/${id}`, formData);
-      navigate("/");
+      navigate("/show-moment");
     } catch (err) {
       console.error(err);
     }

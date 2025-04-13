@@ -22,7 +22,7 @@ const momentSchema = new mongoose.Schema({
     },
     created_by: {
         type: mongoose.Schema.Types.ObjectId,
-        required: true,
+        // required: true,
         ref: 'User'
     }
 }, {timestamps: true})

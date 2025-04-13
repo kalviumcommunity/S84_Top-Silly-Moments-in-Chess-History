@@ -53,7 +53,7 @@ router.get("/moments", async (req, res) => {
     const moments = await Moment.find();
     res.status(200).json(moments);
   } catch (error) {
-    res.status(500).json({ message: "Error fetching moments", error });
+    res.status(500).json({ message: "Error fetching moments", error: error });
   }
 });
 
