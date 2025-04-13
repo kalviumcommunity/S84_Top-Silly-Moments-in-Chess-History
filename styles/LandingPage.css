@@ -1,0 +1,57 @@
+.landing__page {
+  padding: 2rem;
+  text-align: center;
+  color: #f1f1f1;
+  background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
+  font-family: 'Georgia', serif;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  backdrop-filter: blur(4px);
+}
+
+.landing__page h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #ffffff, #c0c0c0, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(255,255,255,0.3);
+  font-weight: bold;
+}
+
+.landing__page p {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+}
+
+.landing__page h3 {
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  font-style: italic;
+  color: #e0e0e0;
+}
+
+.landing__page b {
+  color: #ffffff;
+  text-shadow: 0 0 6px rgba(255,255,255,0.3);
+}
+
+.landing__page canvas {
+  margin-top: 2rem;
+  border-radius: 12px;
+}
+
+.landing__page p:hover {
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+  transition: box-shadow 0.3s ease;
+}

@@ -1,0 +1,148 @@
+.navbar__all {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to right, #121212, #1e1e1e);
+  padding: 20px 30px;
+  position: relative;
+  color: #f1f1f1;
+  font-family: 'Georgia', serif;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Magnus GIF Styling */
+.navbar__gif__container {
+  position: absolute;
+  top: 80px;
+  left: 20px;
+  transition: opacity 0.4s ease;
+  z-index: 100;
+}
+
+.navbar__gif__container.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.navbar__gif__container.show {
+  opacity: 1;
+}
+
+.magnus__gif {
+  height: 300px;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  box-shadow: 0 0 15px rgba(192, 192, 192, 0.3);
+}
+.queen__link.signup:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+}
+
+/* Icon Styling */
+.king__icon,
+.queen__icon {
+  color: #e0e0e0;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.king__icon:hover,
+.queen__icon:hover {
+  transform: scale(1.1);
+  color: #ffffff;
+}
+
+/* Navigation Links Container */
+.queen__nav__links {
+  position: absolute;
+  right: 90px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 25px;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.queen__nav__links.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Individual Links */
+.queen__link {
+  background: rgba(255, 255, 255, 0.04);
+  color: #eaeaea;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(192, 192, 192, 0.3);
+  transform: translateX(100px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+/* Hover effect with proper scale and visual feedback */
+.queen__link:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Animation delays for each link */
+.queen__nav__links.show .queen__link:nth-child(1) {
+  transition-delay: 0.1s;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.queen__nav__links.show .queen__link:nth-child(2) {
+  transition-delay: 0.2s;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.queen__nav__links.show .queen__link:nth-child(3) {
+  transition-delay: 0.3s;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.queen__nav__links.show .queen__link:nth-child(4) {
+  transition-delay: 0.4s;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.queen__nav__links.show .queen__link:nth-child(5) {
+  transition-delay: 0.5s;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Special Link for Signup */
+.queen__link.signup {
+  background: linear-gradient(145deg, #ffffff, #dcdcdc);
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+  border: none;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .queen__nav__links {
+    flex-direction: column;
+    top: auto;
+    bottom: 80px;
+    right: 20px;
+    gap: 15px;
+  }
+}
