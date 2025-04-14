@@ -8,7 +8,7 @@ const SQlRoute = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:6900/sql/users")
+      .get("https://top-silly-moments-in-chess.onrender.com/sql/users")
       .then((res) => setUsers(res.data))
       .catch((err) => console.error(err));
   }, []);
@@ -18,7 +18,7 @@ const SQlRoute = () => {
     selectedUser(userId);
 
     axios
-      .get(`http://localhost:6900/sql/users/${userId}`)
+      .get(`https://top-silly-moments-in-chess.onrender.com/sql/users/${userId}`)
       .then((res) => setMoments(res.data))
       .catch((err) => console.log(err));
   };

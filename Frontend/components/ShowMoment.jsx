@@ -9,35 +9,40 @@ function ShowMoment() {
 
   useEffect(() => {
     fetchMoment();
-  }, [])
+  }, []);
 
   const fetchMoment = () => {
     axios
-      .get("http://localhost:6900/api/moments")
+      .get("https://top-silly-moments-in-chess.onrender.com/api/moments")
       .then((res) => setMoment(res.data))
       .catch((err) => console.log(err));
   };
 
-  const handleDelete = async(id) => {
-    const confirmDelete = window.confirm("Are you really sure you want to delete this moment? 🤨")
+  const handleDelete = async (id) => {
+    const confirmDelete = window.confirm(
+      "Are you really sure you want to delete this moment? 🤨"
+    );
 
     if (!confirmDelete) return;
     const token = localStorage.getItem("token");
-    try{
-      await axios.delete(`http://localhost:6900/api/moments/${id}`,{
-        headers: {
-          Authorization: `Bearer ${token}`
+    try {
+      await axios.delete(
+        `https://top-silly-moments-in-chess.onrender.com/api/moments/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
-      })
+      );
       fetchMoment();
-    }catch(err){
+    } catch (err) {
       if (err.response?.status === 401) {
-        alert('Your session has expired. Please log in again.');
-    }
+        alert("Your session has expired. Please log in again.");
+      }
       console.error(err);
-      alert(`Only admin can delete moments!`)
+      alert(`Only admin can delete moments!`);
     }
-  }
+  };
 
   return (
     <div className="Show__moment">
@@ -81,8 +86,12 @@ function ShowMoment() {
               "Video URL:",
               moment.videoUrl || "No video URL provided"
             )}
-            <button onClick={() => navigate(`/update/${moment._id}`)}>Edit moment</button>
-            <button onClick={() => handleDelete(moment._id)}>Delete Moment</button>
+            <button onClick={() => navigate(`/update/${moment._id}`)}>
+              Edit moment
+            </button>
+            <button onClick={() => handleDelete(moment._id)}>
+              Delete Moment
+            </button>
           </li>
         ))}
       </ul>

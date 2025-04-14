@@ -9,7 +9,7 @@ const AdminDashboard = () => {
   // console.log(token);
   const makeAdmin = async () => {
     try{
-      await axios.put("http://localhost:6900/api/users/make-admin", { email }, {withCredentials: true, headers: {Authorization: `Bearer ${token}`}});
+      await axios.put("https://top-silly-moments-in-chess.onrender.com/api/users/make-admin", { email }, {withCredentials: true, headers: {Authorization: `Bearer ${token}`}});
       alert(`${email} is now admin`);
 
     }catch(err){
@@ -18,7 +18,7 @@ const AdminDashboard = () => {
   };
 
   const removeAdmin = async () => {
-    await axios.put("http://localhost:6900/api/users/remove-admin", { email }, { withCredentials: true });
+    await axios.put("https://top-silly-moments-in-chess.onrender.com/api/users/remove-admin", { email }, { withCredentials: true });
     alert(`${email} is no longer admin`);
   };
 

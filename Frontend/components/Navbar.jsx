@@ -26,7 +26,7 @@ function NavBar() {
 
   const handleLogOut = async() => {
     try{
-      await axios.post("http://localhost:6900/api/users/logout", {} , {withCredentials: true});
+      await axios.post("https://top-silly-moments-in-chess.onrender.com/api/users/logout", {} , {withCredentials: true});
       localStorage.removeItem("token");
       setIsLoggedIn(false);
         setUsername(null);

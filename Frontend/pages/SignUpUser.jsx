@@ -16,7 +16,7 @@
         const handleSubmit = async(e) => {
             e.preventDefault();
             try{
-                const response = await axios.post(`http://localhost:6900/api/users`, user, {withCredentials: true})
+                const response = await axios.post(`https://top-silly-moments-in-chess.onrender.com/api/users`, user, {withCredentials: true})
                 localStorage.setItem("token", response.data.token);
                 if (response.status === 201){
                     localStorage.setItem("token", response.data.token);

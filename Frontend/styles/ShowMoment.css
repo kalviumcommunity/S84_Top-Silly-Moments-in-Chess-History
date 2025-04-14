@@ -146,3 +146,85 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 768px) {
+  .Show__moment {
+    width: 95%;
+    margin: 2rem auto;
+  }
+
+  .ShowMoment__list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .ShowMoment__item {
+    padding: 1.2rem;
+  }
+
+  .ShowMoment__item img,
+  .ShowMoment__video {
+    height: 180px;
+  }
+
+  .ShowMoment__h3 {
+    font-size: 1.2rem;
+  }
+
+  .ShowMoment__p {
+    font-size: 1rem;
+    min-height: auto;
+  }
+
+  .ShowMoment__h2 {
+    font-size: 1.5rem;
+  }
+
+  .ShowMoment__buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ShowMoment__item button {
+    padding: 10px;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .Show__moment {
+    width: 92%;
+    margin: 2.5rem auto;
+  }
+
+  .ShowMoment__list {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 22px;
+  }
+
+  .ShowMoment__item {
+    padding: 1.5rem;
+  }
+
+  .ShowMoment__item img,
+  .ShowMoment__video {
+    height: 200px;
+  }
+
+  .ShowMoment__h3 {
+    font-size: 1.3rem;
+  }
+
+  .ShowMoment__p {
+    font-size: 1.05rem;
+  }
+
+  .ShowMoment__buttons {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .ShowMoment__item button {
+    font-size: 1rem;
+  }
+}

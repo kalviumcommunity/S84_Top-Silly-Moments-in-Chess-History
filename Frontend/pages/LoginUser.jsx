@@ -16,7 +16,7 @@ const LoginUser = () => {
         e.preventDefault();
 
         try{
-            const response = await axios.post(`http://localhost:6900/api/users/login`, credentials, {withCredentials: true});
+            const response = await axios.post(`https://top-silly-moments-in-chess.onrender.com/api/users/login`, credentials, {withCredentials: true});
             
             if (response.status == 200){
                 localStorage.setItem("token", response.data.token);

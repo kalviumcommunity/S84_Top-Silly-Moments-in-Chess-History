@@ -76,3 +76,42 @@
     transform: translateY(0);
   }
 }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 30px;
+  }
+
+  .contact-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .contact-container input,
+  .contact-container textarea {
+    font-size: 0.95rem;
+  }
+
+  .contact-container button {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 20px;
+  }
+
+  .contact-container h2 {
+    font-size: 1.6rem;
+  }
+
+  .contact-container input,
+  .contact-container textarea {
+    font-size: 0.9rem;
+  }
+
+  .contact-container button {
+    font-size: 0.9rem;
+  }
+}

@@ -15,7 +15,7 @@ const UpdateMoment = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:6900/api/moments/${id}`)
+      .get(`https://top-silly-moments-in-chess.onrender.com/api/moments/${id}`)
       .then((res) => setFormData(res.data))
       .catch((err) => console.log(err));
   }, [id]);
@@ -27,8 +27,9 @@ const UpdateMoment = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:6900/api/moments/${id}`, formData);
+      await axios.put(`https://top-silly-moments-in-chess.onrender.com/api/moments/${id}`, formData);
       navigate("/show-moment");
+      alert('Updated successfully')
     } catch (err) {
       console.error(err);
     }
