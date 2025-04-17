@@ -89,3 +89,43 @@
     transform: translateY(0);
   }
 }
+
+
+@media (max-width: 768px) {
+  .signup-container {
+    max-width: 90%;
+    padding: 30px;
+    margin: 50px auto;
+  }
+
+  .signup-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .signup-container input,
+  .signup-container button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .signup-container {
+    padding: 20px;
+    margin: 30px auto;
+  }
+
+  .signup-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .signup-container input,
+  .signup-container button {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+
+  .signup-container a {
+    font-size: 0.9rem;
+  }
+}

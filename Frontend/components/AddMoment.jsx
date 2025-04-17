@@ -104,8 +104,12 @@ const AddMoment = () => {
           onChange={(e) => setVideoUrl(e.target.value)}
           required
         />
-        <select className="addMoment__focus"
-          required>
+        <select
+  className="addMoment__focus"
+  value={selectedUser} // Bind the selected value to the state
+  onChange={(e) => setSelectedUser(e.target.value)} // Update the state on selection
+  required
+>
           <option className="addMoment__focus" value="">
             Select User
           </option>

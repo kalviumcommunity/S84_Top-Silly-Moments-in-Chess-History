@@ -24,6 +24,9 @@
                     navigate('/')
                 }
             }catch(err){
+                if (err.response?.status === 409){
+                    alert(`This mail already exist. Please use a different mail!`)
+                }
                 console.error(`Sign-Up failed. Check connection or credentials`, err);
             }
         }

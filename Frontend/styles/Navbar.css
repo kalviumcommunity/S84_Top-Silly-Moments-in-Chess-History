@@ -12,7 +12,6 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Magnus GIF Styling */
 .navbar__gif__container {
   position: absolute;
   top: 80px;
@@ -36,12 +35,12 @@
   border: 2px solid #ccc;
   box-shadow: 0 0 15px rgba(192, 192, 192, 0.3);
 }
+
 .queen__link.signup:hover {
   transform: scale(1.1);
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
 }
 
-/* Icon Styling */
 .king__icon,
 .queen__icon {
   color: #e0e0e0;
@@ -55,7 +54,6 @@
   color: #ffffff;
 }
 
-/* Navigation Links Container */
 .queen__nav__links {
   position: absolute;
   right: 90px;
@@ -73,7 +71,6 @@
   pointer-events: auto;
 }
 
-/* Individual Links */
 .queen__link {
   background: rgba(255, 255, 255, 0.04);
   color: #eaeaea;
@@ -88,14 +85,12 @@
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
 }
 
-/* Hover effect with proper scale and visual feedback */
 .queen__link:hover {
   transform: scale(1.1) !important;
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
   background-color: rgba(255, 255, 255, 0.08);
 }
 
-/* Animation delays for each link */
 .queen__nav__links.show .queen__link:nth-child(1) {
   transition-delay: 0.1s;
   transform: translateX(0);
@@ -126,7 +121,6 @@
   opacity: 1;
 }
 
-/* Special Link for Signup */
 .queen__link.signup {
   background: linear-gradient(145deg, #ffffff, #dcdcdc);
   color: #000;
@@ -135,14 +129,61 @@
   border: none;
 }
 
-
-/* Responsive Adjustments */
 @media (max-width: 768px) {
   .queen__nav__links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #1a1a1a;
+    padding: 60px 20px;
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 999;
+    box-shadow: -2px 0 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, opacity 0.3s ease;
     flex-direction: column;
-    top: auto;
-    bottom: 80px;
-    right: 20px;
-    gap: 15px;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
   }
+
+  .queen__nav__links.show {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .queen__link {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .queen__icon {
+    position: relative;
+    z-index: 1000;
+  }
+
+  .navbar__overlay {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .navbar__overlay {
+    display: none !important;
+  }
+}
+
+.navbar__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(18, 18, 18, 0.7);
+  backdrop-filter: blur(2px);
+  z-index: 998;
 }

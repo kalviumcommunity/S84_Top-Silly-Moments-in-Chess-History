@@ -55,3 +55,50 @@
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
   transition: box-shadow 0.3s ease;
 }
+
+
+@media (max-width: 768px) {
+  .landing__page {
+    padding: 1.5rem;
+  }
+
+  .landing__page h1 {
+    font-size: 2.5rem;
+  }
+
+  .landing__page p {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .landing__page h3 {
+    font-size: 1.1rem;
+  }
+
+  .landing__page canvas {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing__page {
+    padding: 1rem;
+  }
+
+  .landing__page h1 {
+    font-size: 2rem;
+  }
+
+  .landing__page p {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+
+  .landing__page h3 {
+    font-size: 1rem;
+  }
+
+  .landing__page canvas {
+    margin-top: 1rem;
+  }
+}
