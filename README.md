@@ -2,7 +2,7 @@
 
 **Top Silly Moments in Chess History** is a full-stack web application that showcases the most hilarious and absurd moments from the world of chess. Users can submit, view, like, and comment on funny chess moments, all within a clean and responsive interface.
 
-🔗 **Live Site:** [https://top-silly-chess-moment.pages.dev/](https://top-silly-chess-moment.pages.dev/)
+🔗 **Live Site:** [[https://top-silly-chess-moment.pages.dev/](https://top-silly-chess-moment.pages.dev/)](https://top-silly-moment-in-chess.netlify.app/)
 
 ---
 
